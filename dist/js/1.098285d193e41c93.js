@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{7:function(e,t,n){"use strict";n.r(t);var s={name:"Home",data:()=>({msg:"Hello from lala !"}),mounted(){console.log("home")}},l=n(2),o=Object(l.a)(s,(function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v(this._s(this.msg))])}),[],!1,null,null,null);t.default=o.exports}}]);
+//# sourceMappingURL=1.098285d193e41c93.js.map

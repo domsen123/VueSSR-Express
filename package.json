@@ -1,0 +1,45 @@
+{
+  "name": "VueSSR-Express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn clean && yarn build:ssr && yarn build:server",
+    "build:server": "webpack --mode production --config build/server/webpack.server.config.js",
+    "build:ssr:client": "NODE_ENV=production webpack --mode production --config build/client/webpack.entry.client.config.js",
+    "build:ssr:server": "NODE_ENV=production webpack --mode production --config build/client/webpack.entry.server.config.js",
+    "build:ssr": "rm -rf dist/js && yarn build:ssr:client && yarn build:ssr:server",
+    "start": "node ./dist/server.js",
+    "dev": "babel-node src/server/bin/www.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "^0.0.0",
+    "memory-fs": "^0.5.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.6",
+    "vue-server-renderer": "^2.6.11",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.6",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "vue-loader": "^15.9.0",
+    "vue-ssr-webpack-plugin": "^3.0.0",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.41.6",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-node-externals": "^1.7.2",
+    "webpackbar": "^4.0.0"
+  }
+}
